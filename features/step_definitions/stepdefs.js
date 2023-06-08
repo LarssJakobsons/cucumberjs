@@ -2,13 +2,23 @@ const assert = require('assert');
 const { Given, When, Then } = require('@cucumber/cucumber');
 
 function WhatsInTheFridge(contents) {
-    // return whats in the fridge
-    return "Nothing"
+    // check the fridge contents
+    if (contents === 'Nothing') {
+        return 'Nothing';
+    }
+    else {
+        return 'Banana';
+    }
 }
 
 Given('I have an empty fridge', function () {
     // return the fridges contents
     this.contents = 'Nothing';
+});
+
+Given('I have a fridge with a banana in it', function () {
+    // return the fridges contents
+    this.contents = 'Banana';
 });
 
 When('I ask whether there is something in the fridge', function () {
